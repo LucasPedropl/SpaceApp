@@ -1,1 +1,2 @@
-npm install styled-components, 
+npm run dev
+npm install styled-components
