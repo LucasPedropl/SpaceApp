@@ -9,6 +9,7 @@ const FigureEstilizada = styled.figure`
     min-height: 328px;
     margin: 0;
     border-radius: 20px;
+    max-width: 100%;
     background-size: cover;
 `
 

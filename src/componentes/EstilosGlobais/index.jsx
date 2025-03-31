@@ -1,23 +1,21 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
-import GandhiSansBold from './Fonts/GandhiSans-Bold.otf';
-import GandhiSansRegular from './Fonts/GandhiSans-Regular.otf';
+import GandhiSansRegular from './fontes/GandhiSans-Regular.otf'
+import GandhiSansBold from './fontes/GandhiSans-Bold.otf'
 
-const EstiloGlobais = createGlobalStyle`
+const EstilosGlobais = createGlobalStyle`
 @font-face {
-    font-family: GandhiSansRegular, sans-serif;
-  src: local('Gandhi Sans Regular'), local('GandhiSansRegular') url(${GandhiSansRegular});
+  font-family: 'GandhiSansRegular';
+  src: local('Gandhi Sans Regular'), local('GandhiSansRegular'), url(${GandhiSansRegular});
 }
-
 @font-face {
-    font-family: 'GandhiSansBold';
-  src: local('Gandhi Sans Bold'), local('GandhiSansBold') url(${GandhiSansBold});
+  font-family: 'GandhiSansBold';
+  src: local('Gandhi Sans Bold'), local('GandhiSansBold'), url(${GandhiSansBold});
 }
-
-    html {
+html {
   line-height: 1.15; 
-  -webkit-text-size-adjust: 100%;
-   font-family: GandhiSansRegular, sans-serif;
+  -webkit-text-size-adjust: 100%; 
+  font-family: GandhiSansRegular;
 }
 body {
   margin: 0;
@@ -158,6 +156,6 @@ template {
 [hidden] {
   display: none;
 }
-`;
+`
 
-export default EstiloGlobais;
+export default EstilosGlobais
