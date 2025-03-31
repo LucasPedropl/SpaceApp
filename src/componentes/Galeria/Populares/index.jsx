@@ -1,9 +1,34 @@
-import Titulo from "../../Titulo"
+import Titulo from '../../Titulo';
+import { styled } from 'styled-components';
 
-const Populares = () => {
-    return <div style={{ minWidth: 212 }}>
-        <Titulo $alinhamento="center">Populares</Titulo>
-    </div>
-}
+const Figure = styled.figure`
+	max-width: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 24px;
+	cursor: pointer;
+	img {
+		border-radius: 10px;
+	}
+`;
 
-export default Populares
+
+
+
+const Populares = ({ fotoPopular }) => {
+	if (!fotoPopular) {
+		return null; 
+	}
+
+	return (
+		<>
+			<Figure id={`foto-${fotoPopular.id}`}>
+				<img src={fotoPopular.path} alt={fotoPopular.alt} />
+			</Figure>
+            
+		</>
+	);
+};
+
+export default Populares;
