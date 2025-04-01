@@ -12,12 +12,15 @@ const GaleriaContainer = styled.div`
 const SecaoFluida = styled.section`
 	flex-direction: row;
 	display: flex;
+	justify-content: space-between;
+	width: 100%;
 `;
 
 const ImagensContainer = styled.section`
 	display: flex;
 	flex-wrap: wrap;
 	gap: 24px;
+	margin-right: 24px;
 
 	flex-grow: 0;
 `;
@@ -32,7 +35,7 @@ const PopularesContainer = styled.section`
 const VerMais = styled.button`
 	background-color: transparent;
 	color: #fff;
-	border: 2px solid;
+	border: 3px solid;
 	border-color: #c98cf1;
 	padding: 12px 20px;
 	font-size: 20px;
@@ -42,17 +45,17 @@ const VerMais = styled.button`
 	margin-top: 16px;
 `;
 
-const Galeria = ({ fotos = [], aoFotoSelecionada, fotosPopulares = [] }) => {
+const Galeria = ({ fotos = [], aoFotoSelecionada, fotosPopulares = [], aoAlternarFavorito, setTag }) => {
 	return (
 		<>
-			<Tags />
+			<Tags setTag={setTag} />
 			<GaleriaContainer>
 				<SecaoFluida>
 					<div>
 						<Titulo>Navegue pela galeria</Titulo>
 						<ImagensContainer>
 							{fotos.map((foto) => (
-								<Imagem aoZoomSolicitado={aoFotoSelecionada} key={foto.id} foto={foto} />
+								<Imagem aoZoomSolicitado={aoFotoSelecionada} key={foto.id} foto={foto} aoAlternarFavorito={aoAlternarFavorito} />
 							))}
 						</ImagensContainer>
 					</div>

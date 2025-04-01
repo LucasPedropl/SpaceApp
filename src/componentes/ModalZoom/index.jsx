@@ -33,7 +33,7 @@ const BotaoFechar = styled.button`
 	cursor: pointer;
 `;
 
-const ModalZoom = ({ foto, onClose }) => {
+const ModalZoom = ({ foto, onClose, aoAlternarFavorito }) => {
 	return (
 		<>
 			{foto && (
@@ -43,7 +43,7 @@ const ModalZoom = ({ foto, onClose }) => {
 						<BotaoFechar type="button" onClick={onClose}>
 							x
 						</BotaoFechar>
-						<Imagem foto={foto} expandida={true} />
+						<Imagem foto={foto} expandida={true} aoAlternarFavorito={aoAlternarFavorito} />
 					</DialogEstilizado>
 				</>
 			)}
